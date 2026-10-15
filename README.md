@@ -53,13 +53,14 @@ MediGen solves this through a structured decision-support journey:
 
 ## 💻 Tech Stack
 - **Frontend Framework:** React 19 (TypeScript)
+- **Authentication:** Supabase Auth (`@supabase/supabase-js`)
 - **Build Tool:** Vite
 - **Styling:** Tailwind CSS (Custom Medical & Health-Tech design system)
 - **Routing:** React Router v7
 - **Icons:** Lucide React
 - **Animations & Delight:** Canvas Confetti & Tailwind Transitions
 - **Maps:** Custom High-Performance Interactive SVG Vector Map (Zero paid API keys needed, works 100% offline)
-- **State & Storage:** LocalStorage Persistence for Search History & Saved Results
+- **State & Storage:** LocalStorage Persistence + Supabase Auth Session Management
 
 ---
 
@@ -139,6 +140,81 @@ The prototype includes 8 carefully structured records representing common chroni
 2. **Real-time PMBJP Warehouse Inventory Sync:** Integration with the Bureau of Pharma PSUs of India (BPPI) API.
 3. **Multilingual Vernacular Interface:** Voice and text support in Hindi, Marathi, Kannada, Tamil, etc.
 4. **On-Device Edge OCR:** Machine learning models running on mobile edge devices for handwriting recognition of handwritten doctor scripts.
+
+---
+
+## 🔐 Supabase Authentication Integration & Setup
+
+MediGen supports real email/password authentication backed by Supabase Auth with persistent browser sessions.
+
+### 1. Environment Configuration
+Create a `.env.local` file in the project root:
+```bash
+# Supabase Project Endpoint
+VITE_SUPABASE_URL=https://ssdoatwllkkqwrmdpqka.supabase.co
+
+# Supabase Publishable / Anon Key (From Project Settings -> API)
+VITE_SUPABASE_PUBLISHABLE_KEY=your-supabase-publishable-key-here
+```
+
+> **Note:** `.env.local` is explicitly ignored in `.gitignore`. Never commit or expose your secret or `service_role` keys.
+
+### 2. Required Supabase Dashboard Settings
+In your [Supabase Project Dashboard](https://supabase.com/dashboard/project/ssdoatwllkkqwrmdpqka):
+1. **Authentication -> Providers -> Email:**
+   - Ensure the **Email** provider is toggled **ON**.
+   - Optional: Toggle *"Confirm email"* on or off depending on whether you want users to verify their email before sign-in. MediGen handles both modes gracefully!
+2. **Authentication -> URL Configuration:**
+   - **Site URL:** `http://localhost:5173` (or `http://localhost:5174`)
+   - **Redirect URLs:** Add `http://localhost:5173/**` and `http://localhost:5174/**`
+
+---
+
+## 🗄️ Database Security & Proposed PostgreSQL Migration
+
+> ⚠️ **Security Doctrine:** Frontend authentication alone does **NOT** secure database tables. In Supabase, database security requires PostgreSQL **Row Level Security (RLS)** policies ensuring users can only read and write their own records.
+
+If you choose to sync saved prescription searches to Supabase PostgreSQL in the future, apply this migration:
+
+```sql
+-- 1. Create user-owned saved searches table
+CREATE TABLE IF NOT EXISTS public.user_saved_searches (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+    medicine_id TEXT NOT NULL,
+    medicine_name TEXT NOT NULL,
+    brand_name TEXT NOT NULL,
+    generic_name TEXT NOT NULL,
+    potential_savings NUMERIC NOT NULL,
+    savings_percent NUMERIC NOT NULL,
+    best_store TEXT NOT NULL,
+    created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 2. Enable Row Level Security (RLS)
+ALTER TABLE public.user_saved_searches ENABLE ROW LEVEL SECURITY;
+
+-- 3. Policy: Users can only view their own saved searches
+CREATE POLICY "Users can view own saved searches"
+ON public.user_saved_searches
+FOR SELECT
+TO authenticated
+USING (auth.uid() = user_id);
+
+-- 4. Policy: Users can only insert searches for themselves
+CREATE POLICY "Users can insert own saved searches"
+ON public.user_saved_searches
+FOR INSERT
+TO authenticated
+WITH CHECK (auth.uid() = user_id);
+
+-- 5. Policy: Users can only delete their own saved searches
+CREATE POLICY "Users can delete own saved searches"
+ON public.user_saved_searches
+FOR DELETE
+TO authenticated
+USING (auth.uid() = user_id);
+```
 
 ---
 

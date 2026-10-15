@@ -19,6 +19,7 @@ export const SummaryPage: React.FC = () => {
   const { saveSearch } = useSearchHistory();
 
   const [savedSuccess, setSavedSuccess] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
   const [formattedDate] = useState(() => 
     new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })
   );
@@ -59,8 +60,10 @@ export const SummaryPage: React.FC = () => {
   const lowestStore = [...medicine.storePrices].sort((a, b) => a.price - b.price)[0];
   const potentialDiff = medicine.brandedAvgPrice - lowestStore.price;
 
-  const handleSaveResult = () => {
-    saveSearch({
+  const handleSaveResult = async () => {
+    if (isSaving || savedSuccess) return;
+    setIsSaving(true);
+    await saveSearch({
       medicineId: medicine.id,
       medicineName: `${medicine.activeIngredient} ${medicine.strength}`,
       brandName: medicine.brandName,
@@ -71,6 +74,7 @@ export const SummaryPage: React.FC = () => {
       brandedPrice: medicine.brandedAvgPrice,
       genericPrice: lowestStore.price
     });
+    setIsSaving(false);
     setSavedSuccess(true);
     setTimeout(() => setSavedSuccess(false), 3000);
   };
@@ -222,14 +226,23 @@ export const SummaryPage: React.FC = () => {
             
             <button
               onClick={handleSaveResult}
+              disabled={isSaving || savedSuccess}
               className={`flex-1 inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-bold text-xs shadow-sm transition-all ${
                 savedSuccess
                   ? 'bg-emerald-600 text-white'
+                  : isSaving
+                  ? 'bg-teal-500 text-white opacity-70 cursor-not-allowed'
                   : 'bg-teal-600 hover:bg-teal-700 text-white'
               }`}
             >
               <Bookmark className="w-4 h-4" />
-              <span>{savedSuccess ? 'Saved to Search History!' : 'Save Result to My Searches'}</span>
+              <span>
+                {savedSuccess
+                  ? 'Saved to Search History!'
+                  : isSaving
+                  ? 'Saving to Database...'
+                  : 'Save Result to My Searches'}
+              </span>
             </button>
 
             <button

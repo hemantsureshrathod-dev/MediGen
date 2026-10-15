@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
 import { DemoBanner } from './components/DemoBanner';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
+import { ProtectedRoute } from './components/ProtectedRoute';
 
 // Pages
 import { HomePage } from './pages/HomePage';
@@ -15,6 +17,8 @@ import { NearbyStoresPage } from './pages/NearbyStoresPage';
 import { SummaryPage } from './pages/SummaryPage';
 import { HistoryPage } from './pages/HistoryPage';
 import { AboutPage } from './pages/AboutPage';
+import { AuthPage } from './pages/AuthPage';
+import { AccountPage } from './pages/AccountPage';
 
 // Scroll to top on route navigation
 const ScrollToTop: React.FC = () => {
@@ -29,39 +33,53 @@ const ScrollToTop: React.FC = () => {
 
 export const App: React.FC = () => {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <div className="min-h-screen flex flex-col bg-[#F8FAFC] text-slate-800 font-sans selection:bg-teal-500 selection:text-white">
-        
-        {/* Academic Prototype Notice & Healthcare Safety Disclaimer */}
-        <DemoBanner />
+    <AuthProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <div className="min-h-screen flex flex-col bg-[#F8FAFC] text-slate-800 font-sans selection:bg-teal-500 selection:text-white">
+          
+          {/* Academic Prototype Notice & Healthcare Safety Disclaimer */}
+          <DemoBanner />
 
-        {/* Global Navigation Bar */}
-        <Navbar />
+          {/* Global Navigation Bar */}
+          <Navbar />
 
-        {/* Dynamic Route View */}
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/scan" element={<ScanPage />} />
-            <Route path="/medicine/:id" element={<MedicineAnalysisPage />} />
-            <Route path="/match/:id" element={<GenericMatchPage />} />
-            <Route path="/compare/:id" element={<PriceComparisonPage />} />
-            <Route path="/verify/:id" element={<SafetyVerificationPage />} />
-            <Route path="/stores/:id" element={<NearbyStoresPage />} />
-            <Route path="/summary/:id" element={<SummaryPage />} />
-            <Route path="/history" element={<HistoryPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            {/* Catch-all redirect to Home */}
-            <Route path="*" element={<HomePage />} />
-          </Routes>
-        </main>
+          {/* Dynamic Route View */}
+          <main className="flex-1">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/scan" element={<ScanPage />} />
+              <Route path="/medicine/:id" element={<MedicineAnalysisPage />} />
+              <Route path="/match/:id" element={<GenericMatchPage />} />
+              <Route path="/compare/:id" element={<PriceComparisonPage />} />
+              <Route path="/verify/:id" element={<SafetyVerificationPage />} />
+              <Route path="/stores/:id" element={<NearbyStoresPage />} />
+              <Route path="/summary/:id" element={<SummaryPage />} />
+              <Route path="/history" element={<HistoryPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              
+              {/* Authentication & Protected User Profile Routes */}
+              <Route path="/auth" element={<AuthPage />} />
+              <Route 
+                path="/account" 
+                element={
+                  <ProtectedRoute>
+                    <AccountPage />
+                  </ProtectedRoute>
+                } 
+              />
 
-        {/* Global Professional Healthcare Footer */}
-        <Footer />
+              {/* Catch-all redirect to Home */}
+              <Route path="*" element={<HomePage />} />
+            </Routes>
+          </main>
 
-      </div>
-    </BrowserRouter>
+          {/* Global Professional Healthcare Footer */}
+          <Footer />
+
+        </div>
+      </BrowserRouter>
+    </AuthProvider>
   );
 };
 
