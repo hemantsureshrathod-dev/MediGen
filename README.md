@@ -84,7 +84,7 @@ npm run dev
 
 Open your browser at:
 ```
-http://localhost:5174/
+https://medigenn.vercel.app/
 ```
 *(or port 5173 if available)*
 
