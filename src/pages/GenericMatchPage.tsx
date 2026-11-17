@@ -117,7 +117,7 @@ export const GenericMatchPage: React.FC = () => {
                 Potential Generic Match
               </span>
               <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-teal-100 text-teal-800">
-                Generic Equivalent
+                Predefined Match
               </span>
             </div>
 
@@ -161,7 +161,7 @@ export const GenericMatchPage: React.FC = () => {
 
             {/* Generic Price Pill */}
             <div className="p-3.5 rounded-xl bg-teal-50 border border-teal-200 flex items-center justify-between">
-              <span className="text-xs text-teal-900 font-semibold">Jan Aushadhi Demo Price:</span>
+              <span className="text-xs text-teal-900 font-semibold">Jan Aushadhi Demo Price (Illustrative):</span>
               <span className="text-xl font-extrabold text-teal-800">₹{medicine.genericAvgPrice}</span>
             </div>
           </div>
@@ -173,7 +173,7 @@ export const GenericMatchPage: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-emerald-100 block mb-1">
-                Calculated Potential Savings
+                Calculated Potential Savings (Illustrative)
               </span>
               <div className="flex items-baseline gap-3">
                 <span className="text-3xl sm:text-4xl font-black">
@@ -187,7 +187,7 @@ export const GenericMatchPage: React.FC = () => {
 
             <div className="text-xs text-emerald-100 bg-white/10 px-3.5 py-2 rounded-xl backdrop-blur-sm border border-white/20">
               Branded: <strong>₹{medicine.brandedAvgPrice}</strong> → Generic: <strong>₹{medicine.genericAvgPrice}</strong>
-              <div className="text-[10px] text-emerald-200 mt-0.5">Sample pricing — demonstration data</div>
+              <div className="text-[10px] text-emerald-200 mt-0.5">Illustrative pricing — academic demonstration data</div>
             </div>
           </div>
 
@@ -204,7 +204,7 @@ export const GenericMatchPage: React.FC = () => {
           <div className="flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-teal-600" />
             <h3 className="text-sm font-bold uppercase tracking-wider text-slate-800">
-              Why this match? (Transparent Equivalence Criteria)
+              Why this match? (Predefined Equivalence Criteria)
             </h3>
           </div>
 
@@ -221,7 +221,7 @@ export const GenericMatchPage: React.FC = () => {
             <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
               <strong className="text-slate-800 block mb-1">Deterministic Architecture:</strong>
               <span className="text-slate-600">
-                Rule-based equivalence mapping grounded in predefined chemical taxonomies — zero autonomous LLM hallucination.
+                Predefined rule-based equivalence mapping grounded in local data module — no clinical decision-making or unvalidated AI claims.
               </span>
             </div>
           </div>

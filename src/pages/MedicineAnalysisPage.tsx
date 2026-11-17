@@ -112,7 +112,7 @@ export const MedicineAnalysisPage: React.FC = () => {
               </span>
               <span className="text-sm font-bold text-teal-700 flex items-center gap-1">
                 <CheckCircle2 className="w-3.5 h-3.5" />
-                Prescription scan
+                Prescription scan (Simulated)
               </span>
             </div>
           </div>
@@ -151,7 +151,7 @@ export const MedicineAnalysisPage: React.FC = () => {
               <div className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-teal-600" />
                 <span className="text-xs font-bold text-teal-950 uppercase tracking-wider">
-                  AI-Assisted Analysis • Grounded in Structured Medicine Data
+                  Structured Equivalence Reasoning • Predefined Prototype Medicine Data
                 </span>
               </div>
               <span className="text-[10px] text-teal-800 font-semibold bg-white px-2 py-0.5 rounded border border-teal-200">
@@ -182,7 +182,7 @@ export const MedicineAnalysisPage: React.FC = () => {
               <span>Professional Verification Mandatory</span>
             </div>
             <p className="leading-relaxed">
-              Structured data indicates a potential equivalent. <strong className="font-semibold text-amber-950">Confirm with your pharmacist or doctor before making any change.</strong> MediGen does not claim autonomous medical interchangeability.
+              Structured data indicates a predefined potential match. <strong className="font-semibold text-amber-950">Confirm with your pharmacist or doctor before making any change.</strong> MediGen does not provide clinical decision-making or autonomous medical interchangeability.
             </p>
           </div>
 

@@ -23,7 +23,7 @@ export const InteractiveMapPanel: React.FC<InteractiveMapPanelProps> = ({
   const [activeFilter, setActiveFilter] = useState<'all' | 'jan-aushadhi' | 'pharmacy'>('all');
 
   // Simulated User Location: Central Laxmipuri / Rankala junction, Kolhapur
-  const userLocation = { x: 45, y: 52, label: 'Your Location (Simulated)' };
+  const userLocation = { x: 45, y: 52, label: 'Reference Point (Simulated Kolhapur)' };
 
   const filteredStores = stores.filter(store => {
     if (activeFilter === 'jan-aushadhi') return store.storeType === 'Jan Aushadhi';
@@ -40,7 +40,7 @@ export const InteractiveMapPanel: React.FC<InteractiveMapPanelProps> = ({
           <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
           <span className="font-semibold text-white">Kolhapur City Area</span>
           <span className="text-[10px] text-slate-400 bg-slate-800 px-1.5 py-0.5 rounded border border-slate-700">
-            Simulated GPS
+            Simulated Vector Map
           </span>
         </div>
 

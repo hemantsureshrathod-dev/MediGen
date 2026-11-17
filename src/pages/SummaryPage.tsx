@@ -94,14 +94,14 @@ export const SummaryPage: React.FC = () => {
         <div className="text-center space-y-2">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold border border-emerald-300 shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
-            <span>Workflow Completed Successfully</span>
+            <span>Workflow Completed Successfully (Academic Demo)</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             Your MediGen Summary
           </h1>
           <p className="text-sm text-slate-600 max-w-lg mx-auto">
-            Decision-support overview for your prescribed medicine and verified generic savings opportunities.
+            Educational decision-support overview for your prescribed medicine and illustrative generic savings opportunities.
           </p>
         </div>
 
@@ -112,13 +112,13 @@ export const SummaryPage: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-100 gap-4">
             <div>
               <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-1">
-                Prescription Consultation Summary
+                Prescription Consultation Summary (Prototype)
               </span>
               <h2 className="text-2xl font-black text-slate-900">
                 {medicine.brandName}
               </h2>
               <p className="text-xs text-teal-700 font-semibold mt-0.5">
-                Generic Equivalent: {medicine.genericName}
+                Potential Generic Equivalent: {medicine.genericName}
               </p>
             </div>
 
@@ -127,7 +127,7 @@ export const SummaryPage: React.FC = () => {
               <span className="text-xs font-bold text-slate-700">
                 {formattedDate}
               </span>
-              <span className="text-[10px] text-slate-400 block mt-0.5">Kolhapur Demo Center</span>
+              <span className="text-[10px] text-slate-400 block mt-0.5">Kolhapur Demo Center (Simulated)</span>
             </div>
           </div>
 
@@ -141,7 +141,7 @@ export const SummaryPage: React.FC = () => {
               <div className="text-2xl font-extrabold text-slate-900">
                 ₹{medicine.brandedAvgPrice}
               </div>
-              <span className="text-[10px] text-slate-500">Branded MRP</span>
+              <span className="text-[10px] text-slate-500">Branded MRP (Illustrative)</span>
             </div>
 
             <div className="p-4 rounded-2xl bg-teal-50 border border-teal-200">
@@ -151,7 +151,7 @@ export const SummaryPage: React.FC = () => {
               <div className="text-2xl font-black text-teal-800">
                 ₹{lowestStore.price}
               </div>
-              <span className="text-[10px] text-teal-700">Jan Aushadhi Outlet</span>
+              <span className="text-[10px] text-teal-700">Jan Aushadhi (Illustrative)</span>
             </div>
 
             <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200">
@@ -162,7 +162,7 @@ export const SummaryPage: React.FC = () => {
                 ₹{potentialDiff}
               </div>
               <span className="text-[10px] text-emerald-700">
-                {medicine.potentialSavingsPercent}% cheaper
+                {medicine.potentialSavingsPercent}% cheaper (Demo)
               </span>
             </div>
 
@@ -173,7 +173,7 @@ export const SummaryPage: React.FC = () => {
               <div className="text-base font-bold text-slate-900 truncate">
                 {nearestStore.storeName.split(' ')[0]}
               </div>
-              <span className="text-[10px] text-slate-500">{nearestStore.distanceKm} km away</span>
+              <span className="text-[10px] text-slate-500">{nearestStore.distanceKm} km away (Simulated)</span>
             </div>
 
           </div>
@@ -182,7 +182,7 @@ export const SummaryPage: React.FC = () => {
           <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/90 space-y-3">
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-                Recommended Best Value Outlet:
+                Simulated Best Value Outlet:
               </span>
               <span className="text-xs font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-200">
                 ★ Best Value
@@ -195,7 +195,7 @@ export const SummaryPage: React.FC = () => {
                   {chosenStore.storeName}
                 </h4>
                 <p className="text-xs text-slate-500 mt-0.5">
-                  {chosenStore.address} • {chosenStore.distanceKm} km away • {chosenStore.openHours}
+                  {chosenStore.address} • {chosenStore.distanceKm} km away (Simulated) • {chosenStore.openHours}
                 </p>
               </div>
 
@@ -204,7 +204,7 @@ export const SummaryPage: React.FC = () => {
                   ₹{chosenStore.price}
                 </span>
                 <span className="text-[11px] text-emerald-700 font-semibold">
-                  In stock ({chosenStore.availability})
+                  In stock ({chosenStore.availability}) (Simulated)
                 </span>
               </div>
             </div>
@@ -217,7 +217,7 @@ export const SummaryPage: React.FC = () => {
               <span>Next Mandatory Step:</span>
             </div>
             <p className="text-xs text-amber-950 leading-relaxed font-medium">
-              Discuss this option with your pharmacist or doctor before making any change. Take this summary to the pharmacy or clinic to confirm identical salt composition, dosage form, and patient suitability.
+              Discuss this option with your doctor or qualified pharmacist before making any change. Take this summary to the pharmacy or clinic to confirm identical salt composition, dosage form, and patient suitability. MediGen does not provide clinical decision-making.
             </p>
           </div>
 
@@ -238,10 +238,10 @@ export const SummaryPage: React.FC = () => {
               <Bookmark className="w-4 h-4" />
               <span>
                 {savedSuccess
-                  ? 'Saved to Search History!'
+                  ? 'Saved to Local Search History!'
                   : isSaving
-                  ? 'Saving to Database...'
-                  : 'Save Result to My Searches'}
+                  ? 'Saving to Local Storage...'
+                  : 'Save Result to Local History'}
               </span>
             </button>
 

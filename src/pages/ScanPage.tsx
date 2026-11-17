@@ -209,7 +209,7 @@ export const ScanPage: React.FC = () => {
                       <div className="flex items-center justify-between font-bold text-slate-900 mb-1">
                         <span className="truncate">{preset.title}</span>
                         <span className="text-[10px] text-teal-700 bg-white px-1.5 py-0.5 rounded border border-teal-200">
-                          96% match
+                          96% match (Demo)
                         </span>
                       </div>
                       <div className="text-[11px] text-slate-500 truncate">{preset.doctor}</div>
@@ -325,7 +325,7 @@ export const ScanPage: React.FC = () => {
                       We couldn't confidently identify this medicine
                     </h3>
                     <p className="text-xs text-slate-600 mt-0.5">
-                      The prescription image handwriting or contrast was unclear (Confidence: 34% — below safety threshold).
+                      The prescription image handwriting or contrast was unclear (Demonstration score: 34% — below safety threshold).
                     </p>
                   </div>
                 </div>
@@ -365,7 +365,7 @@ export const ScanPage: React.FC = () => {
                       Prescription Scanned Successfully
                     </span>
                     <span className="text-xs text-slate-500">
-                      Confidence: <strong className="text-slate-800">{detectedMedicine.confidence}%</strong>
+                      Confidence: <strong className="text-slate-800">{detectedMedicine.confidence}% (Demonstration value)</strong>
                     </span>
                   </div>
 
@@ -415,7 +415,7 @@ export const ScanPage: React.FC = () => {
                 {/* Safety notice micro-box */}
                 <div className="p-3 rounded-xl bg-amber-50/70 border border-amber-200/80 text-[11px] text-amber-900 flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-amber-700 shrink-0" />
-                  <span>OCR extracted text from prescription image. Final clinical verification is required with your pharmacist.</span>
+                  <span>Simulated prescription scan for demonstration. Any medication change requires direct consultation with a qualified doctor or pharmacist.</span>
                 </div>
 
               </div>

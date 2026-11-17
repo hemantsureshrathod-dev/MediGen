@@ -90,7 +90,7 @@ export const StoreDetailModal: React.FC<StoreDetailModalProps> = ({
           {/* Price & Savings Pill */}
           <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/90 flex items-center justify-between">
             <div>
-              <span className="text-xs text-slate-500 block">Generic Medicine Demo Price</span>
+              <span className="text-xs text-slate-500 block">Generic Medicine Illustrative Price</span>
               <div className="flex items-baseline gap-2 mt-0.5">
                 <span className="text-2xl font-extrabold text-slate-900">₹{store.price}</span>
                 <span className="text-xs text-slate-400 line-through">Branded ₹{medicine.brandedAvgPrice}</span>
@@ -103,7 +103,7 @@ export const StoreDetailModal: React.FC<StoreDetailModalProps> = ({
                   <TrendingDown className="w-3.5 h-3.5" />
                   <span>Save ₹{potentialSavings} ({savingsPct}%)</span>
                 </div>
-                <span className="text-[10px] text-slate-400 block mt-0.5">Demo estimation</span>
+                <span className="text-[10px] text-slate-400 block mt-0.5">Illustrative demo estimation</span>
               </div>
             )}
           </div>
@@ -141,7 +141,7 @@ export const StoreDetailModal: React.FC<StoreDetailModalProps> = ({
                 <strong className="text-slate-900 font-semibold block text-xs uppercase tracking-wider text-slate-500">Stock Availability</strong>
                 <span className="inline-flex items-center gap-1.5 font-medium text-emerald-700">
                   <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                  {store.availability} in stock (Demo record)
+                  {store.availability} in stock (Simulated demo record)
                 </span>
               </div>
             </div>

@@ -56,10 +56,10 @@ export const PriceComparisonPage: React.FC = () => {
         {/* Title */}
         <div className="text-center sm:text-left space-y-1">
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Compare prices near you
+            Compare illustrative prices near you
           </h1>
           <p className="text-sm text-slate-600">
-            Medicine: <strong className="text-slate-800">{medicine.genericName}</strong> • {medicine.packSize}
+            Medicine: <strong className="text-slate-800">{medicine.genericName}</strong> • {medicine.packSize} (Kolhapur Demo)
           </p>
         </div>
 
@@ -69,7 +69,7 @@ export const PriceComparisonPage: React.FC = () => {
             <div className="flex items-center gap-2">
               <BarChart3 className="w-4 h-4 text-teal-600" />
               <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                Visual Price Comparison Breakdown
+                Illustrative Price Comparison Breakdown
               </h3>
             </div>
             <span className="text-[11px] text-slate-400">
@@ -81,7 +81,7 @@ export const PriceComparisonPage: React.FC = () => {
             {/* Branded benchmark */}
             <div className="space-y-1">
               <div className="flex justify-between text-xs font-semibold">
-                <span className="text-slate-600">Branded MRP ({medicine.brandName})</span>
+                <span className="text-slate-600">Branded MRP ({medicine.brandName}) (Illustrative)</span>
                 <span className="text-slate-900 font-bold">₹{medicine.brandedAvgPrice}</span>
               </div>
               <div className="w-full bg-slate-100 h-3 rounded-full overflow-hidden">
@@ -125,14 +125,14 @@ export const PriceComparisonPage: React.FC = () => {
 
           <div className="text-[11px] text-slate-400 border-t border-slate-100 pt-3 flex items-center gap-1.5">
             <Info className="w-3.5 h-3.5 shrink-0" />
-            <span>Demo pricing. Actual prices and physical availability may vary across retail outlets.</span>
+            <span>Illustrative demo pricing. Store details, availability, and distances are simulated.</span>
           </div>
         </div>
 
         {/* Detailed Store Comparison Table / Cards */}
         <div className="space-y-4">
           <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-            Available Outlets in Kolhapur Area
+            Simulated Outlets in Kolhapur Area
           </h3>
 
           <div className="grid grid-cols-1 gap-3">
@@ -223,7 +223,7 @@ export const PriceComparisonPage: React.FC = () => {
             </div>
             <div>
               <h4 className="text-base font-extrabold text-emerald-950">
-                You could potentially save up to ₹{maxSavings}
+                You could potentially save up to ₹{maxSavings} (Illustrative)
               </h4>
               <p className="text-xs text-emerald-800 mt-0.5">
                 By purchasing generic equivalent from Pradhan Mantri Jan Aushadhi Kendra instead of branded MRP.
@@ -232,7 +232,7 @@ export const PriceComparisonPage: React.FC = () => {
           </div>
 
           <span className="text-[11px] font-semibold text-emerald-800 bg-white/80 px-2.5 py-1 rounded-lg border border-emerald-200 shrink-0">
-            Demo pricing • Academic sample
+            Illustrative demo pricing • Academic sample
           </span>
         </div>
 
@@ -242,7 +242,7 @@ export const PriceComparisonPage: React.FC = () => {
             onClick={() => navigate(`/verify/${medicine.id}`)}
             className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-medigen-navy hover:bg-slate-900 text-white font-bold text-sm shadow-soft transition-all duration-200 group active:scale-[0.98]"
           >
-            <span>Proceed to Safety & Verification Checklist</span>
+            <span>Proceed to Educational Verification Checklist</span>
             <ArrowRight className="w-4 h-4 text-teal-400 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>

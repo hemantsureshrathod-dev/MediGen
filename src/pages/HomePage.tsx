@@ -32,7 +32,7 @@ export const HomePage: React.FC = () => {
               {/* Product Badge */}
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-50 border border-teal-200/80 text-teal-800 text-xs font-semibold shadow-sm">
                 <Sparkles className="w-3.5 h-3.5 text-teal-600" />
-                <span>AI-Assisted Equivalence & Price Transparency</span>
+                <span>Predefined Equivalence & Price Transparency</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
                 <span className="text-slate-600 font-normal">Semester 3 Field Prototype</span>
               </div>
@@ -44,7 +44,7 @@ export const HomePage: React.FC = () => {
 
               {/* Supporting Copy */}
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal">
-                MediGen helps you understand prescribed medicines, discover potential generic alternatives, compare prices across pharmacies and Jan Aushadhi outlets, and find nearby availability — <strong className="text-slate-800 font-semibold">with professional verification built into the process.</strong>
+                MediGen helps you understand prescribed medicines, explore predefined potential generic alternatives, compare illustrative prices across pharmacies and Jan Aushadhi outlets, and view simulated nearby availability — <strong className="text-slate-800 font-semibold">with professional verification guidance.</strong>
               </p>
 
               {/* CTA Buttons */}
@@ -108,7 +108,7 @@ export const HomePage: React.FC = () => {
                     <div className="flex items-center gap-2">
                       <div className="w-2.5 h-2.5 rounded-full bg-teal-500" />
                       <span className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                        Live Prototype Flow
+                        Simulated Prototype Flow
                       </span>
                     </div>
                     <span className="text-[11px] font-semibold text-slate-400 bg-slate-100 px-2 py-0.5 rounded">
@@ -128,13 +128,13 @@ export const HomePage: React.FC = () => {
                       </div>
                     </div>
                     <span className="text-[10px] font-bold text-slate-600 bg-white px-2 py-1 rounded border border-slate-200">
-                      OCR 96%
+                      Simulated OCR
                     </span>
                   </div>
 
                   {/* Flow Arrow */}
                   <div className="flex justify-center -my-1 text-teal-600">
-                    <span className="text-xs font-semibold">↓ Verified Chemical Equivalence</span>
+                    <span className="text-xs font-semibold">↓ Predefined Potential Match</span>
                   </div>
 
                   {/* Flow Step 2: Generic Match Found */}
@@ -145,7 +145,7 @@ export const HomePage: React.FC = () => {
                       </div>
                       <div>
                         <div className="text-xs font-bold text-teal-950">Atorvastatin IP 10 mg</div>
-                        <div className="text-[11px] text-teal-700">Generic Equivalent Match</div>
+                        <div className="text-[11px] text-teal-700">Predefined Potential Match</div>
                       </div>
                     </div>
                     <div className="text-right">
@@ -165,7 +165,7 @@ export const HomePage: React.FC = () => {
                         <div className="text-2xl font-black mt-0.5">Save ₹108 (60%)</div>
                       </div>
                       <div className="text-right text-[11px] bg-white/20 px-2.5 py-1 rounded-lg backdrop-blur-sm">
-                        Sample demo pricing
+                        Illustrative demo pricing
                       </div>
                     </div>
                     <div className="w-full bg-white/20 h-1.5 rounded-full mt-3 overflow-hidden">
@@ -183,7 +183,7 @@ export const HomePage: React.FC = () => {
                       </div>
                     </div>
                     <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                      In Stock
+                      In Stock (Simulated)
                     </span>
                   </div>
 
@@ -213,10 +213,10 @@ export const HomePage: React.FC = () => {
               <FileText className="w-6 h-6" />
             </div>
             <h3 className="text-lg font-bold text-slate-900 mb-2">
-              1. Verified Generic Matches
+              1. Predefined Generic Matches
             </h3>
             <p className="text-sm text-slate-600 leading-relaxed">
-              Identify potential generic equivalents using structured medicine data, matching active ingredients, dosage forms, and pharmacopeial standards.
+              Explore predefined potential generic alternatives using structured local data, matching active ingredients, dosage forms, and pharmacopeial standards.
             </p>
           </div>
 
@@ -225,10 +225,10 @@ export const HomePage: React.FC = () => {
               <Scale className="w-6 h-6" />
             </div>
             <h3 className="text-lg font-bold text-slate-900 mb-2">
-              2. Price Transparency
+              2. Illustrative Price Transparency
             </h3>
             <p className="text-sm text-slate-600 leading-relaxed">
-              Compare sample prices across retail pharmacies and government Pradhan Mantri Jan Aushadhi Kendras to uncover transparent cost savings.
+              Compare illustrative demo prices across retail pharmacies and government Pradhan Mantri Jan Aushadhi Kendras to explore potential savings.
             </p>
           </div>
 
@@ -237,10 +237,10 @@ export const HomePage: React.FC = () => {
               <ShieldCheck className="w-6 h-6" />
             </div>
             <h3 className="text-lg font-bold text-slate-900 mb-2">
-              3. Safety First
+              3. Educational Safety Verification
             </h3>
             <p className="text-sm text-slate-600 leading-relaxed">
-              Every result includes a clear professional verification reminder. Empower patients with informed questions to ask their licensed doctor or pharmacist.
+              Every result includes an educational verification checklist. Always consult a qualified doctor or pharmacist before making any medication changes.
             </p>
           </div>
 
@@ -268,7 +268,7 @@ export const HomePage: React.FC = () => {
               <div className="text-2xl font-black text-slate-300 mb-2">01</div>
               <h4 className="text-sm font-bold text-slate-900 mb-1">Scan</h4>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Upload prescription image or enter medicine manually with autocomplete.
+                Upload prescription image with simulated OCR or enter medicine manually with autocomplete.
               </p>
             </div>
 
@@ -276,7 +276,7 @@ export const HomePage: React.FC = () => {
               <div className="text-2xl font-black text-teal-600 mb-2">02</div>
               <h4 className="text-sm font-bold text-slate-900 mb-1">Match</h4>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Rule-based equivalence reasoning maps active salts and dosages.
+                Predefined rule-based equivalence mapping matches active salts and dosages.
               </p>
             </div>
 
@@ -284,7 +284,7 @@ export const HomePage: React.FC = () => {
               <div className="text-2xl font-black text-blue-600 mb-2">03</div>
               <h4 className="text-sm font-bold text-slate-900 mb-1">Compare</h4>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Side-by-side cost analysis comparing branded vs generic MRP.
+                Side-by-side illustrative cost analysis comparing branded vs generic MRP.
               </p>
             </div>
 
@@ -292,7 +292,7 @@ export const HomePage: React.FC = () => {
               <div className="text-2xl font-black text-amber-500 mb-2">04</div>
               <h4 className="text-sm font-bold text-slate-900 mb-1">Verify</h4>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Critical safety checklist and clinical questions for the pharmacist.
+                Educational safety checklist and questions to ask your pharmacist.
               </p>
             </div>
 
@@ -300,7 +300,7 @@ export const HomePage: React.FC = () => {
               <div className="text-2xl font-black text-emerald-600 mb-2">05</div>
               <h4 className="text-sm font-bold text-slate-900 mb-1">Locate</h4>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Discover nearby Jan Aushadhi and pharmacy outlets on the map.
+                Explore simulated Jan Aushadhi and pharmacy outlets on the Kolhapur vector map.
               </p>
             </div>
 
@@ -330,7 +330,7 @@ export const HomePage: React.FC = () => {
             </div>
             <h4 className="font-bold text-slate-900 text-base">Affordability</h4>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Reduces chronic out-of-pocket medical expenditure by identifying quality generic alternatives that cost 50% to 80% less.
+              Illustrates how quality generic alternatives can lower out-of-pocket medical expenditure by 50% to 80% based on sample PMBJP pricing.
             </p>
           </div>
 
@@ -340,7 +340,7 @@ export const HomePage: React.FC = () => {
             </div>
             <h4 className="font-bold text-slate-900 text-base">Transparency</h4>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Demystifies prescription salt compositions, eliminating asymmetric pricing knowledge between pharmaceutical sellers and buyers.
+              Demystifies prescription salt compositions, illustrating transparent pricing benchmarks across retail and Jan Aushadhi outlets.
             </p>
           </div>
 
@@ -350,7 +350,7 @@ export const HomePage: React.FC = () => {
             </div>
             <h4 className="font-bold text-slate-900 text-base">Discoverability</h4>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Bridges the awareness gap for government Jan Aushadhi outlets, making it straightforward to find physical inventory nearby.
+              Demonstrates awareness and physical store discovery for Jan Aushadhi outlets with simulated local vector mapping.
             </p>
           </div>
 
@@ -360,7 +360,7 @@ export const HomePage: React.FC = () => {
             </div>
             <h4 className="font-bold text-slate-900 text-base">Safety First</h4>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Enforces a strict human-in-the-loop medical verification doctrine. Never automates medication changes without pharmacist sign-off.
+              Enforces educational verification. Never automates medication changes; always consult a licensed doctor or pharmacist before switching.
             </p>
           </div>
 

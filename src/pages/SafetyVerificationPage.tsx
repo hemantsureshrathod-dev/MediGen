@@ -40,7 +40,7 @@ export const SafetyVerificationPage: React.FC = () => {
     { title: 'Verify strength and dosage form', desc: `Match specified strength (${medicine?.strength || 'standard'}) and formulation (${medicine?.dosageForm || 'standard form'}).` },
     { title: 'Confirm suitability with your pharmacist/doctor', desc: 'Discuss your specific medical history, allergies, and therapeutic response before switching.' },
     { title: 'Check patient-specific contraindications and interactions', desc: 'Verify with clinician if concurrent medications could interact with any excipient.' },
-    { title: 'Do not change medication solely based on this app', desc: 'MediGen is an informational decision-support advisor, not an autonomous prescribing system.' },
+    { title: 'Do not change medication based solely on this prototype', desc: 'MediGen is an academic prototype for educational decision-support, not an autonomous prescribing or clinical validation system. Always consult a qualified doctor or pharmacist before changing any medication.' },
   ];
 
   if (!medicine) {
@@ -75,7 +75,7 @@ export const SafetyVerificationPage: React.FC = () => {
           </button>
 
           <span className="text-xs font-bold text-amber-800 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-300">
-            Stage 04 • Safety & Verification Checklist
+            Stage 04 • Educational Verification Checklist
           </span>
         </div>
 
@@ -85,7 +85,7 @@ export const SafetyVerificationPage: React.FC = () => {
             Before you switch
           </h1>
           <p className="text-sm text-slate-600">
-            Professional verification protocol for <strong className="text-slate-800">{medicine.brandName}</strong> → <strong className="text-teal-700">{medicine.genericName}</strong>
+            Educational verification protocol for <strong className="text-slate-800">{medicine.brandName}</strong> → <strong className="text-teal-700">{medicine.genericName}</strong>
           </p>
         </div>
 
@@ -101,7 +101,7 @@ export const SafetyVerificationPage: React.FC = () => {
                 Professional Verification Protocol
               </h2>
               <p className="text-xs sm:text-sm text-amber-900 leading-relaxed">
-                MediGen provides information to help you discuss lower-cost options with a <strong className="font-bold underline decoration-amber-400">qualified healthcare professional (licensed pharmacist or physician).</strong>
+                MediGen provides illustrative information to help you discuss lower-cost options with a <strong className="font-bold underline decoration-amber-400">qualified healthcare professional (licensed pharmacist or doctor).</strong> This checklist does not imply clinical validation.
               </p>
             </div>
           </div>
@@ -220,7 +220,7 @@ export const SafetyVerificationPage: React.FC = () => {
         {/* Required Prominent Bottom Disclaimer */}
         <div className="p-4 rounded-xl bg-slate-100 border border-slate-200 text-center">
           <p className="text-xs text-slate-600 font-medium">
-            <strong className="text-slate-800">Legal & Medical Notice:</strong> MediGen does not diagnose, prescribe, or authorize medication changes. All actions and decisions must be confirmed with a licensed health professional.
+            <strong className="text-slate-800">Legal & Medical Notice:</strong> MediGen does not diagnose, prescribe, authorize medication changes, or make clinical decisions. Any medication change requires direct consultation with a qualified doctor or pharmacist.
           </p>
         </div>
 

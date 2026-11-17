@@ -82,7 +82,7 @@ export const NearbyStoresPage: React.FC = () => {
               className="px-3 py-1.5 rounded-lg bg-teal-50 border border-teal-200 text-teal-800 text-xs font-semibold hover:bg-teal-100 transition-colors flex items-center gap-1.5 shadow-sm"
             >
               <Navigation className="w-3.5 h-3.5 text-teal-600" />
-              <span>Use Simulated GPS Location (Kolhapur)</span>
+              <span>Use Simulated Reference Location (Kolhapur)</span>
             </button>
           </div>
         </div>
@@ -91,7 +91,7 @@ export const NearbyStoresPage: React.FC = () => {
           <div className="p-3 rounded-xl bg-teal-50 border border-teal-200 text-xs text-teal-900 animate-in fade-in duration-150 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-teal-600" />
-              <span>Location locked: <strong>Laxmipuri / Rankala junction, Kolhapur (Prototype GPS)</strong></span>
+              <span>Reference location set: <strong>Laxmipuri / Rankala junction, Kolhapur (Simulated Demo Point)</strong></span>
             </div>
             <span className="text-[10px] text-teal-700 bg-white px-2 py-0.5 rounded border border-teal-200">
               Zero paid API tokens consumed
@@ -102,10 +102,10 @@ export const NearbyStoresPage: React.FC = () => {
         {/* Title */}
         <div className="space-y-1">
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Nearby Store Discovery & Inventory
+            Simulated Store Discovery & Inventory
           </h1>
           <p className="text-sm text-slate-600">
-            Locate stock of <strong className="text-slate-800">{medicine.genericName}</strong> at nearby government outlets and private pharmacies.
+            Explore simulated stock and pricing of <strong className="text-slate-800">{medicine.genericName}</strong> at predefined outlets in Kolhapur.
           </p>
         </div>
 
@@ -181,10 +181,10 @@ export const NearbyStoresPage: React.FC = () => {
           <div className="lg:col-span-5 space-y-3.5">
             <div className="flex items-center justify-between">
               <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                Outlets in Kolhapur ({displayedStores.length} matching)
+                Simulated Outlets in Kolhapur ({displayedStores.length} matching)
               </h3>
               <span className="text-[11px] text-teal-700 font-semibold">
-                Click store to view on map
+                Click store to view on simulated map
               </span>
             </div>
 
