@@ -36,17 +36,17 @@ export const HistoryPage: React.FC = () => {
             <div className="flex items-center gap-2">
               <History className="w-5 h-5 text-teal-600" />
               <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-                My Searches & Saved Analyses
+                Search History
               </h1>
             </div>
             
             <div className="flex items-center gap-2 pt-0.5">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-[11px] font-bold">
-                <HardDrive className="w-3.5 h-3.5 text-teal-600" />
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-[11px] font-medium">
+                <HardDrive className="w-3.5 h-3.5 text-slate-500" />
                 <span>Browser LocalStorage</span>
               </span>
               <p className="text-xs text-slate-500 hidden sm:inline">
-                Stored locally in browser storage per academic prototype design.
+                Saved locally on your device for fast offline access.
               </p>
             </div>
           </div>

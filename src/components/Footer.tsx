@@ -111,7 +111,7 @@ export const Footer: React.FC = () => {
             <span>•</span>
             <Link to="/about#disclaimer" className="hover:text-slate-300 transition-colors">Medical Disclaimer</Link>
             <span>•</span>
-            <Link to="/history" className="hover:text-slate-300 transition-colors">Stored Cache</Link>
+            <Link to="/history" className="hover:text-slate-300 transition-colors">Search History</Link>
           </div>
         </div>
       </div>

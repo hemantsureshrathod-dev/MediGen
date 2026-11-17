@@ -88,14 +88,9 @@ export const NearbyStoresPage: React.FC = () => {
         </div>
 
         {gpsSimulatedNotice && (
-          <div className="p-3 rounded-xl bg-teal-50 border border-teal-200 text-xs text-teal-900 animate-in fade-in duration-150 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-teal-600" />
-              <span>Reference location set: <strong>Laxmipuri / Rankala junction, Kolhapur (Simulated Demo Point)</strong></span>
-            </div>
-            <span className="text-[10px] text-teal-700 bg-white px-2 py-0.5 rounded border border-teal-200">
-              Zero paid API tokens consumed
-            </span>
+          <div className="p-3 rounded-xl bg-teal-50 border border-teal-200 text-xs text-teal-900 animate-in fade-in duration-150 flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
+            <span>Reference location set: <strong>Laxmipuri / Rankala junction, Kolhapur (Simulated Demo Point)</strong></span>
           </div>
         )}
 

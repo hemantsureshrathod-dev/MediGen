@@ -143,12 +143,12 @@ export const ScanPage: React.FC = () => {
 
         {/* Tab Toggle: Upload Prescription vs Enter Medicine Manually */}
         <div className="flex justify-center">
-          <div className="p-1 bg-slate-200/80 rounded-xl inline-flex gap-1 shadow-inner">
+          <div className="p-1 bg-slate-100 rounded-xl inline-flex gap-1 border border-slate-200">
             <button
               onClick={() => setActiveTab('upload')}
-              className={`px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 ${
+              className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 ${
                 activeTab === 'upload'
-                  ? 'bg-white text-slate-900 shadow-soft-sm'
+                  ? 'bg-white text-slate-900 shadow-sm'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -157,9 +157,9 @@ export const ScanPage: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveTab('manual')}
-              className={`px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 ${
+              className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 ${
                 activeTab === 'manual'
-                  ? 'bg-white text-slate-900 shadow-soft-sm'
+                  ? 'bg-white text-slate-900 shadow-sm'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -178,19 +178,16 @@ export const ScanPage: React.FC = () => {
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-teal-600" />
-                  <span className="text-xs font-bold text-slate-900 uppercase tracking-wider">
-                    Recommended For Live Demo: Click a Sample Prescription
+                  <span className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                    Sample Prescriptions (Quick Demo)
                   </span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={handleTriggerUnclearScan}
-                    className="text-[11px] font-semibold text-amber-700 bg-amber-50 hover:bg-amber-100 px-2 py-1 rounded border border-amber-200 transition-colors"
-                    title="Simulate unreadable prescription error state"
-                  >
-                    Test Unreadable Scan Error State
-                  </button>
-                </div>
+                <button
+                  onClick={handleTriggerUnclearScan}
+                  className="text-[11px] font-medium text-amber-700 bg-amber-50 hover:bg-amber-100 px-2 py-1 rounded border border-amber-200 transition-colors self-start sm:self-auto"
+                >
+                  Test Unreadable Scan
+                </button>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">

@@ -152,7 +152,7 @@ export const SafetyVerificationPage: React.FC = () => {
                       )}
                     </div>
                     <div className="space-y-0.5">
-                      <div className={`text-xs font-bold ${isChecked ? 'text-slate-900' : 'text-slate-500 line-through'}`}>
+                      <div className={`text-xs font-bold ${isChecked ? 'text-slate-900' : 'text-slate-700'}`}>
                         {item.title}
                       </div>
                       <div className="text-[11px] text-slate-500 leading-normal">

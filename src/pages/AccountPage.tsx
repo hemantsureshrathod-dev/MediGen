@@ -253,7 +253,7 @@ export const AccountPage: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-slate-900 group-hover:text-teal-700 transition-colors">
-                  My Searches & Analyses
+                  Search History
                 </h3>
                 <p className="text-xs text-slate-500">
                   {history.length > 0 
